@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sheraz - Developer portfolio </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<text y='.9em' font-size='90'>👨🏻‍💻</text>
+</svg>">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ORIGINAL STYLES (unchanged) */
+        * {
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(8, 8, 56);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0px 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(181, 115, 241);
+            font-size: 1.04rem;
+
+        }
+
+        .left {
+            font-size: 1.5rem;
+
+        }
+
+        .first {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 95px 0;
+        }
+
+        .first>div {
+            width: 30%;
+        }
+
+        .leftsec {
+            font-size: 3rem;
+        }
+
+        .rightsec img {
+            width: 100%;
+
+        }
+
+        .purple {
+            color: rgb(181, 115, 241);
+        }
+
+        .gray {
+            color: gray;
+        }
+
+        #elemet {
+            color: rgb(181, 115, 241);
+        }
+
+        .second {
+            max-width: 80vw;
+            height: 80vh;
+            margin-left: 90px;
+        }
+
+        main hr {
+            border: 0px;
+            background-color: rgb(181, 115, 241);
+            height: 2px;
+            margin: 30px 84px;
+        }
+
+        .second h1 {
+            font-size: 2rem;
+
+        }
+
+        .second .box {
+            background-color: white;
+            width: 80vw;
+            height: 2px;
+            margin: 50px 0;
+            display: flex;
+        }
+
+        .second .vertical {
+            height: 93px;
+            width: 1px;
+            background-color: white;
+            margin: 0 220px;
+        }
+
+        .vertical .image {
+            width: 40px;
+            position: relative;
+            top: -45px;
+            right: 21px;
+
+        }
+
+        .vertical .title {
+            position: relative;
+            top: 44px;
+            width: 150px;
+        }
+
+        .vertical .desc {
+            position: relative;
+            top: 50px;
+            width: 150px;
+            color: gray;
+            font-size: 9px;
+        }
+
+        footer {
+            background-color: #060641;
+            height: 50px;
+
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding-top: 13px;
+
+        }
+
+        footer:hover {
+            background-color: rgb(8, 8, 110);
+            cursor: pointer;
+        }
+
+        .btn {
+            background-color: #081c52;
+            color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            padding: 10px 34px;
+            cursor: pointer;
+            font-weight: 500;
+            margin: 80px 10px;
+        }
+
+        .btn:hover {
+            background-color: #0d2e8b;
+            font-size: 0.9rem;
+        }
+
+        .contact-section {
+            width: 100%;
+            padding: 60px 0px;
+            background: #011232;
+            text-align: center;
+        }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-box {
+            background: #1e1e1e;
+            color: white;
+            width: 260px;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-box:hover {
+            background: #00bcd4;
+            transform: translateY(-5px);
+        }
+
+        .contact-section h2 {
+            font-size: 40px;
+            margin-bottom: 45px;
+        }
+
+        .contact-box i {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .contact-box a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hidden form section */
+        .email-form-section {
+            display: none;
+            background: #001331;
+            padding: 50px 20px;
+            margin: 40px auto;
+            width: 70%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .email-form-section form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .email-form-section input,
+        .email-form-section textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .email-form-section button {
+            background: #00bcd4;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            width: 85%;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .email-form-section button:hover {
+            background: #019bb3;
+        }
+
+        .marginemail {
+            margin: 0px 14px;
+        }
+
+        /* =========================
+           RESPONSIVE MEDIA QUERIES
+           (ADDED ONLY — no design changes)
+           ========================= */
+
+        /* Large desktops / wide screens */
+        @media (min-width: 2660px) {
+            .second .vertical {
+                margin: 0px 256px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .first>div {
+                width: 35%;
+            }
+
+            .second {
+                max-width: 1100px;
+            }
+
+            .second .box {
+                width: 90vw;
+            }
+
+            .second .vertical {
+                margin: 0px 162px;
+            }
+
+
+        }
+
+        /* Desktop / laptop */
+        @media (max-width: 1200px) {
+            .first {
+                margin: 70px 0;
+            }
+
+            .first>div {
+                width: 40%;
+            }
+
+            .leftsec {
+                font-size: 2.6rem;
+            }
+
+            .second .vertical {
+                margin: 0 102px;
+            }
+
+            main hr {
+                margin: 30px 40px;
+            }
+        }
+
+        /* Medium tablets / small laptops */
+        @media (max-width: 992px) {
+
+            /* stack the main columns */
+            .first {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .first>div {
+                width: 48%;
+
+            }
+
+            .leftsec {
+                font-size: 2.2rem;
+            }
+
+            /* make experience box wrap */
+            .second .box {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 24px;
+                padding: 20px 44px;
+                width: 80%;
+                margin: 30px auto;
+                height: auto;
+                background: transparent;
+            }
+
+            /* transform vertical blocks into readable cards */
+            .second .vertical {
+                height: auto;
+                width: 220px;
+                background: transparent;
+                margin: 12px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .vertical .image {
+                position: static;
+                top: 0;
+                right: 0;
+                width: 48px;
+                margin-bottom: 8px;
+            }
+
+            .vertical .title,
+            .vertical .desc {
+                position: static;
+                top: 0;
+                width: 100%;
+            }
+
+            .vertical .desc {
+                font-size: 12px;
+            }
+
+            .second {
+                height: auto;
+                margin-left: 38px;
+            }
+
+            main hr {
+                margin: 20px 20px;
+            }
+        }
+
+        /* Small tablets and large phones */
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 14px 12px;
+            }
+
+            nav ul {
+                display: none;
+                /* keep original nav hidden on small screens (same as before) */
+            }
+
+            .first {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin: 40px 0;
+                gap: 16px;
+            }
+
+            .first>div {
+                width: 85%;
+            }
+
+            .leftsec {
+                font-size: 1.9rem;
+            }
+
+            .btn {
+                padding: 10px 18px;
+                margin: 18px 6px;
+            }
+
+            .second h1 {
+                font-size: 1.6rem;
+            }
+
+            .second .box {
+                width: 80vw;
+            }
+
+            .contact-section {
+                padding: 40px 0px;
+            }
+
+            .contact-section h2 {
+                font-size: 32px;
+                margin-bottom: 26px;
+            }
+
+            .contact-box {
+                width: 45%;
+                padding: 18px;
+            }
+
+            .email-form-section {
+                width: 92%;
+                padding: 28px 14px;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+
+            .email-form-section input {
+                padding: 12px 0px;
+            }
+
+            .email-form-section textarea {
+                padding: 12px 0px;
+            }
+
+            .first {
+                margin: 30px 0;
+            }
+
+            .first>div {
+                width: 47%;
+            }
+
+            .leftsec {
+                font-size: 1.4rem;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 12px 0;
+                padding: 10px 16px;
+            }
+
+            /* experience cards stack full width */
+            .second .box {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                padding: 10px 0;
+            }
+
+            .second .vertical {
+                width: 92%;
+                margin: 8px 0;
+                display: block;
+                text-align: left;
+                padding: 12px;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 6px;
+            }
+
+            .vertical .image {
+                width: 36px;
+                float: left;
+                margin-right: 12px;
+                position: static;
+                top: 0;
+                right: 0;
+            }
+
+            .vertical .title {
+                margin-top: 6px;
+                font-size: 1rem;
+            }
+
+            .vertical .desc {
+                position: static;
+                top: 0;
+                width: 100%;
+                font-size: 12px;
+                color: gray;
+                margin-top: 6px;
+            }
+
+            .contact-box {
+                width: 100%;
+            }
+
+            .contact-section h2 {
+                font-size: 26px;
+            }
+
+            .email-form-section {
+                width: 96%;
+                padding: 18px 6px;
+            }
+
+            footer {
+                height: auto;
+                padding: 14px 8px;
+            }
+
+            .footer {
+                padding-top: 6px;
+                font-size: 9px;
+            }
+
+            main hr {
+                margin: 16px 14px;
+            }
+        }
+
+        /* Very small (old phones) */
+        @media (max-width: 360px) {
+            .email-form-section input {
+                padding: 12px 0px;
+            }
+
+            .email-form-section textarea {
+                padding: 12px 0px;
+            }
+
+            .left {
+                font-size: 1.25rem;
+            }
+
+            .leftsec {
+                font-size: 1.2rem;
+            }
+
+            .contact-section h2 {
+                font-size: 22px;
+            }
+
+            .btn {
+                padding: 8px 12px;
+            }
+
+            .vertical .desc {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Sheraz's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li> <a href="#home"> Home </a></li>
+                    <li> <a href="#about"> About </a> </li>
+                    <li> <a href="#about"> Services </a> </li>
+                    <li> <a href="#about"> Projects </a> </li>
+                    <li> <a href="#contact"> Contact Us </a> </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="first">
+            <div class="leftsec">Hi, My name is <span class="purple">
+                    Sheraz
+                </span>
+                <div>and I am a passionate</div>
+                <span id="elemet"></span>
+                <div>
+                    <button class="btn" onclick="openResume()">My Resume</button>
+                    <button class="btn" onclick="openGithub()">Visit Github</button>
+                </div>
+
+            </div>
+            <div class="rightsec"><img src="developer.png"
+                    alt="developer image"></div>
+        </section>
+        <hr>
+        <section id="about" class="second">
+            <span class="gray">What I have done so far</span>
+            <h1>Past Experience</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image" src="https://www.svgrepo.com/show/452228/html-5.svg" alt="html">
+                    <div class="title">
+                        HTML Website structure <br>(2024-2025)
+                    </div>
+                    <div class="desc">
+                        Their responsibilities include converting design mockups into functional code, ensuring websites
+                        are visually appealing and responsive across different devices and browsers, and collaborating
+                        with other team members to build and update web applications.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image" src="https://www.svgrepo.com/show/353623/css-3.svg" alt="css">
+                    <div class="title">
+                        CCS Website Designing <br>(2024-2025)
+                    </div>
+                    <div class="desc">
+                        Their responsibilities include converting design mockups into functional code, ensuring websites
+                        are visually appealing and responsive across different devices and browsers, and collaborating
+                        with other team members to build and update web applications.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image" src="https://www.svgrepo.com/show/452075/node-js.svg" alt="javascript">
+                    <div class="title">
+                        Java Script Web Developer <br>(2024-2025)
+                    </div>
+                    <div class="desc">
+                        Their responsibilities include converting design mockups into functional code, ensuring websites
+                        are visually appealing and responsive across different devices and browsers, and collaborating
+                        with other team members to build and update web applications.
+                    </div>
+                </div>
+
+                <div class="vertical">
+                    <img class="image" src="https://www.svgrepo.com/show/439187/html-templates.svg"
+                        alt="front-end developer">
+
+
+                    <div class="title">
+                        Front-End Web Developer <br>(2024-2025)
+                    </div>
+                    <div class="desc">
+                        Their responsibilities include converting design mockups into functional code, ensuring websites
+                        are visually appealing and responsive across different devices and browsers, and collaborating
+                        with other team members to build and update web applications.
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+
+            <div class="contact-bar">
+                <div class="contact-box">
+                    <i>📞</i>
+                    <h3>Phone</h3>
+                    <p>+92 321 6763141</p>
+                </div>
+
+                <div class="contact-box">
+                    <a href="https://www.google.com/maps/@30.7882977,70.9322174,16z?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank">
+                        <i>📍</i>
+                        <h3>Location</h3>
+                        <p>View on Map</p>
+                    </a>
+                </div>
+
+                <!-- Send Email Button -->
+                <div class="contact-box send-btn" onclick="showForm()">
+                    <i>📧</i>
+                    <h3>Send Email</h3>
+                    <p>Click to contact us</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hidden Contact Form -->
+        <section class="email-form-section" id="emailFormSection">
+            <h2>Send Us an Email</h2>
+
+            <form action="https://github.com/itxshree511-tech/web-developer/itxshree511@gmail.com" method="POST">
+
+                <!-- Disable captcha -->
+                <input type="hidden" name="_captcha" value="false">
+
+                <input type="text" name="name" placeholder="Enter Your Name" required>
+
+                <input type="email" name="email" placeholder="Enter Your Email" required>
+
+                <textarea name="message" placeholder="Write Your Message" required></textarea>
+
+                <button class="marginemail" type="submit">Send Email</button>
+            </form>
+        </section>
+
+        <footer>
+            <div class="footer">copyright© 2025 Sheerazportfoliowebsite — Built with HTML CSS & JS</div>
+        </footer>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#elemet', {
+            strings: ['Web Developer', 'UI/UX Designer', 'Graphic Designer', '&amp; Video Editor'],
+            typeSpeed: 75,
+        });
+
+        function openResume() {
+            // Replace with your actual resume link
+            window.open("http://127.0.0.1:3000/indes.html", "_blank");
+        }
+
+        function openGithub() {
+            // Replace with your actual GitHub profile link
+            window.open("https://github.com/itxshree511-tech/web-developer", "_blank");
+        }
+        function showForm() {
+            document.getElementById("emailFormSection").style.display = "block";
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+    </script>
+</body>
+
+</html>
